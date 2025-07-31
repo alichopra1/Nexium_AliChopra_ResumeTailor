@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../api/lib/supabaseClient";
 import { Button } from "@/components/ui/button";
+import jsPDF from "jspdf";
 
 interface Resume {
   id: string;
@@ -47,23 +48,39 @@ export default function ResultsPage() {
     fetchLatestResume();
   }, [router]);
 
-  const formatText = (text: string) => {
-    return text
-      .split('\n')
-      .map((line, index) => (
-        <span key={index}>
-          {line}
-          {index < text.split('\n').length - 1 && <br />}
-        </span>
-      ));
+  const handleDownloadTxt = () => {
+    if (!latestResume) return;
+    const blob = new Blob([latestResume.tailored_text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `tailored_resume_${latestResume.id}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
-  const formatTextWithCSS = (text: string) => {
-    return (
-      <div style={{ whiteSpace: 'pre-wrap' }}>
-        {text}
-      </div>
-    );
+  const handleDownloadPdf = () => {
+    if (!latestResume) return;
+    const doc = new jsPDF();
+    doc.setFont('courier');
+    doc.setFontSize(10);
+    
+    const lines = latestResume.tailored_text.split('\n');
+    const lineHeight = 10;
+    const pageHeight = 550; // Approximate height in points for A4 page
+    const linesPerPage = Math.floor(pageHeight / lineHeight);
+    
+    let currentLine = 0;
+    while (currentLine < lines.length) {
+      const pageLines = lines.slice(currentLine, currentLine + linesPerPage);
+      doc.text(pageLines, 10, 10);
+      currentLine += linesPerPage;
+      if (currentLine < lines.length) {
+        doc.addPage();
+      }
+    }
+    
+    doc.save(`tailored_resume_${latestResume.id}.pdf`);
   };
 
   if (loading) {
@@ -101,8 +118,7 @@ export default function ResultsPage() {
             <div className="whitespace-pre-wrap">
               {latestResume.tailored_text}
             </div>
-            
-            </div>
+          </div>
         </div>
         
         <div>
@@ -113,6 +129,11 @@ export default function ResultsPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-6 flex justify-center space-x-4">
+        <Button onClick={handleDownloadTxt}>Download as TXT</Button>
+        <Button onClick={handleDownloadPdf}>Download as PDF</Button>
       </div>
     </div>
   );
