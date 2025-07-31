@@ -18,7 +18,7 @@ export default function TermsPage() {
           <section>
             <h4 className="text-base font-semibold mb-2">Introduction</h4>
             <p>
-              By using the Resume Tailor App ("the App"), you agree to these Terms of Service ("Terms"). If you do not agree with these Terms, please do not use the App.
+              By using the Resume Tailor App (&quot;the App&quot;), you agree to these Terms of Service (&quot;Terms&quot;). If you do not agree with these Terms, please do not use the App.
             </p>
           </section>
           <section>
@@ -33,7 +33,7 @@ export default function TermsPage() {
             <ul className="list-disc pl-5">
               <li>The App is intended for personal use only to tailor your resume for specific job descriptions.</li>
               <li>You must not use the App for any illegal or unauthorized purpose.</li>
-              <li>The App uses artificial intelligence ("AI") to analyze your resume and job description to provide tailored suggestions. You are responsible for reviewing and accepting any suggestions made by the AI.</li>
+              <li>The App uses artificial intelligence (&quot;AI&quot;) to analyze your resume and job description to provide tailored suggestions. You are responsible for reviewing and accepting any suggestions made by the AI.</li>
             </ul>
           </section>
           <section>
@@ -46,7 +46,7 @@ export default function TermsPage() {
           <section>
             <h4 className="text-base font-semibold mb-2">Limitation of Liability</h4>
             <ul className="list-disc pl-5">
-              <li>The App is provided "as is" without any warranties, express or implied.</li>
+              <li>The App is provided &quot;as is&quot; without any warranties, express or implied.</li>
               <li>We are not liable for any damages arising from your use of the App, including but not limited to direct, indirect, incidental, or consequential damages.</li>
             </ul>
           </section>

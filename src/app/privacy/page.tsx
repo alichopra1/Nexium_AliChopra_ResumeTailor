@@ -35,7 +35,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-5">
               <li>Authenticate your account and provide access to the App.</li>
               <li>Analyze your resume and job description using AI to generate tailored suggestions.</li>
-              <li>Improve the App's functionality and user experience.</li>
+              <li>Improve the App&apos;s functionality and user experience.</li>
             </ul>
             <p>Please note that the AI processes your resume and job description data but does not store this data beyond the duration of your session.</p>
           </section>
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
             <p>You have the following rights regarding your data:</p>
             <ul className="list-disc pl-5">
               <li><strong>Access</strong>: You can request a copy of your data by contacting us.</li>
-              <li><strong>Update</strong>: You can update your data through the App's settings.</li>
+              <li><strong>Update</strong>: You can update your data through the App&apos;s settings.</li>
               <li><strong>Delete</strong>: You can delete your data by deleting your account or contacting us.</li>
             </ul>
           </section>
