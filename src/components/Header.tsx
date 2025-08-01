@@ -14,18 +14,6 @@ export default function Header() {
           Resume Tailor
         </Link>
         <nav className="flex items-center space-x-4">
-          <ul className="flex space-x-4">
-            <li>
-              <Link href="/dashboard" className="hover:underline">
-                Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link href="/results" className="hover:underline">
-                Results
-              </Link>
-            </li>
-          </ul>
           <Button
             variant="ghost"
             size="icon"
