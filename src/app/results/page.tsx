@@ -114,7 +114,7 @@ export default function ResultsPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <h3 className="text-lg font-medium mb-2">Tailored Resume</h3>
-          <div className="p-4 border rounded-lg bg-gray-50 text-sm leading-relaxed">
+          <div className="p-4 border rounded-lg bg-card text-foreground text-sm leading-relaxed">
             <div className="whitespace-pre-wrap">
               {latestResume.tailored_text}
             </div>
@@ -123,7 +123,7 @@ export default function ResultsPage() {
         
         <div>
           <h3 className="text-lg font-medium mb-2">AI Feedback</h3>
-          <div className="p-4 border rounded-lg bg-blue-50 text-sm leading-relaxed">
+          <div className="p-4 border rounded-lg bg-blue-50 dark:bg-blue-900 text-foreground text-sm leading-relaxed">
             <div className="whitespace-pre-wrap">
               {latestResume.feedback}
             </div>

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-200 text-foreground py-4 px-6 mt-auto">
+    <footer className="bg-background text-foreground py-4 px-6 mt-auto">
       <div className="container mx-auto text-center">
         <p>&copy; {new Date().getFullYear()} Resume Tailor. All rights reserved.</p>
         <div className="mt-2">
@@ -10,4 +10,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}   
+}
